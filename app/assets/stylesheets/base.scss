@@ -1,0 +1,117 @@
+$type: #444;
+$link: #1c44a0;
+
+@import 'mixins';
+@import 'normalize';
+* { @include box-sizing(border-box); }
+@import 'grid';
+@import 'type';
+@import 'nav';
+
+body{ 
+  padding:0;
+  margin: 0;
+  background: #242b2f;
+}
+
+a{
+  color: $link;
+  text-decoration: none;
+  border-bottom: 1px solid fade-out($link, 0.2);
+  &:hover{
+    color: darken($link, 10%);
+    border-bottom: 1px solid darken($link, 10%);
+  }
+}
+
+#page{
+  background-color: #fff;
+  padding: 6em 0;
+}
+
+#page > header{
+  position: absolute;
+  top: 0;
+  padding: 2em 0 1em 0;
+  z-index: 99;
+  width: 100%;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: all;
+  -moz-transition-duration: 500ms;
+  -moz-transition-timing-function: ease-in-out;
+  h1{
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+  }
+  &.stick{
+    position: fixed;
+    top: 0;
+    background-color: fade-out(#fff, 0.05);
+    @include box-shadow(0 1px 3px rgba(0,0,0,0.4));
+  }
+}
+
+.banner{
+  background-color: #040520;
+  background: image-url("blur-back.jpg") no-repeat 50% 12%;
+  background-size: cover;
+  color: #fff;
+  margin-bottom: 2em;
+  min-height: 26em;
+  padding-top: 10em;
+  h1,h2{
+    font-weight: 300;
+    margin: 0;
+    text-align: center;
+  }
+  h1{ font-size: 89px; }
+  h2{
+    font-size: 26px;
+//    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2",georgia,serif;
+    font-style: italic;
+  }
+}
+
+.feature{
+  padding: 1em 0;
+  border-bottom: 1px solid #ccc;
+  &:last-child{
+    border-bottom: none;
+  }
+  a{
+    color: $type;
+    &:hover{
+      color: #222;
+    }
+  }
+  img{
+    border: 3px solid #fff;
+  }
+  h4{
+    margin: 0;
+    small{
+      display: none;
+      text-align: right;
+      padding-left: 1em;
+      color: #868686;
+      font-weight: 300;
+    }
+  }
+  &:hover{
+    background: #efefef;
+    small{
+      display: inline-block;
+    }
+  }
+}
+
+.span7.centered{
+  h3{
+    margin: 2em 0;
+  }
+}

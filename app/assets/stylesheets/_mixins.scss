@@ -1,0 +1,55 @@
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+@mixin clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+.clearfix { @include clearfix(); }
+
+// Webkit-style focus
+// ------------------
+@mixin tab-focus() {
+  // Default
+  outline: thin dotted #333;
+  // Webkit
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+// IE7 inline-block
+// ----------------
+@mixin ie7-inline-block() {
+  *display: inline; /* IE7 inline-block hack */
+  *zoom: 1;
+}
+
+@mixin box-shadow($args) {
+  -webkit-box-shadow: $args;
+  -moz-box-shadow: $args;
+  box-shadow: $args;
+}
+
+// From Foundation
+// --------------------------------------------------
+// Grid Calculation for Percentages
+
+@function gridCalc($colNumber, $totalColumns) {
+	@return percentage(($colNumber / $totalColumns));
+}
+
+@mixin box-sizing($bs){
+  -webkit-box-sizing: $bs;
+  -moz-box-sizing: $bs;
+  box-sizing: $bs;
+}

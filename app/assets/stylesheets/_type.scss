@@ -1,0 +1,47 @@
+html { font-size: 62.5%; }
+body{
+  font-size: 16px;
+  font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2",georgia,serif;
+  line-height: 1.6;
+  color: $type;
+  -webkit-font-smoothing: antialiased; 
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: "museo-sans-1","museo-sans-2";
+  line-height: 1;
+//  margin: 0 0 1em 0;
+}
+
+h1 { font-size: 42px; }
+h2 { font-size: 34px; }
+h3 { font-size: 26px; }
+h4 { font-size: 21px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+
+li{
+  margin-bottom: 1em;
+}
+
+.sidenote{
+  font-size: 13px;
+  border-left: 1px solid #eee;
+}
+
+.center_quote{
+  text-align:center;
+}
+
+section header{
+  margin: 2em auto;
+  padding: 1em 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  h1,h2{
+    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2",georgia,serif;
+    font-weight: normal;
+    font-style: italic;
+  }
+}
