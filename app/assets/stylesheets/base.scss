@@ -21,7 +21,7 @@ a{
   text-decoration: none;
   border-bottom: 1px solid fade-out($link, 0.2);
   &:hover{
-    color: darken($link, 10%);
+    color: darken($link, 20%);
     border-bottom: 1px solid darken($link, 10%);
   }
 }
@@ -64,9 +64,44 @@ a{
   &.stick{
     position: fixed;
     top: 0;
-    background-color: $page;
+    background-color: fade-out($page, 0.05);
     border-bottom: 2px solid rgba(0,0,0,0.2);
 //    @include box-shadow(0 1px 3px rgba(0,0,0,0.4));
+  }
+}
+
+@media only screen and (max-width: ($screenSmall - 1)) {
+  #page{
+    padding-top: 1em;
+  }
+  #page > header{
+    position: relative;
+    top: 0;
+    padding-top: 1em;
+    h1{
+      border-bottom: 1px solid $type;
+      padding-bottom: 1em;
+    }
+    nav{
+      float: none;
+      padding: 0 0 1em 0;
+      @include clearfix;
+      ul{
+        li{
+          float: none;
+          margin: 0;
+          a{
+            padding: 1em 0;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid $type;
+          }
+        }
+      }
+    }
+    &.stick{
+      position: relative;
+      top: 0;
+    }
   }
 }
 
@@ -93,6 +128,20 @@ a{
     font-size: 26px;
 //    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2",georgia,serif;
     font-style: italic;
+  }
+}
+
+@media only screen and (max-width: ($screenSmall - 1)) {
+  .banner{
+    padding: 4em 0;
+    min-height: 16em;
+    h1{
+      font-size: 68px;
+      margin-bottom: 0.2em;
+    }
+    h2{
+      line-height: 1.2;
+    }
   }
 }
 
@@ -139,8 +188,29 @@ a{
   border-bottom: none;
 }
 
+@media only screen and (max-width: ($screenSmall - 1)) {
+  .feature{
+    h4{
+      margin: 1em 0;
+    }
+  }
+  .portrait.feature{
+    border-bottom: 1px solid fade-out($type, 0.9);
+    margin-bottom: 2em;
+  }
+}
+
 .span7.centered{
   h3{
     margin: 2em 0;
+  }
+}
+
+#final{
+  img{
+    border: 6px solid #fff;
+  }
+  h4{
+    margin:0;
   }
 }
