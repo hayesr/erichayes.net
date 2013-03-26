@@ -98,18 +98,48 @@
   <div class="features">
     <header><h2>Design Examples</h2></header>
     <div class="row">
-      <div class="span4">
-        <%= image_tag 'dribbble.png'%>
-        <p><a href="http://dribbble.com/ehayes">My Dribbble profile</a> has some UI design and other fun stuff.</p>
+      <div class="span4 portrait feature">
+        <a href="http://dribbble.com/ehayes">
+          <%= image_tag 'dribbble.png'%>
+          <p><strong>My Dribbble profile</strong> has some UI design and other fun stuff.</p>
+        </a>
       </div>
-      <div class="span4">
-        <%= image_tag 'susd.png'%>
-        <p>The <a href="http://www.saugususd.org/">Saugus Union School District</a> is where I currently work. This site is the victim of committee-design, but I pulled out what I could.</p>
+      <div class="span4 portrait feature">
+        <a href="http://www.saugususd.org/">
+          <%= image_tag 'susd.png'%>
+          <p><strong>The Saugus Union School District.</strong> (This suffers from some post-launch committee design)</p>
+        </a>
       </div>
-      <div class="span4">
-        <%= image_tag 'megan-blog.png'%>
-        <p>My <a href="http://blog.megan-hayes.com">wife is a wedding photographer</a>. 
-          She orders me to design on occasion.</p>
+      <div class="span4 portrait feature">
+        <a href="http://blog.megan-hayes.com">
+          <%= image_tag 'megan-blog.png'%>
+          <p><strong>My wife is a wedding photographer.</strong> 
+            She orders me to design for her on occasion.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <div class="row">
+    <div class="span8 centered">
+      <div class="row">
+        <div class="span6">
+          <h5>Take a chance on me.</h5>
+          <p>
+            I may not have the most impressive body of work, 
+            but everything I've done in life has been the result of 
+            an endless desire to improve my skillset.
+            I know I could be a valuable addition to the 37Signals Team.
+          </p>
+          <p>
+            <a href="mailto:eric@erichayes.net" class="button">Email Eric</a>
+          </p>
+        </div>
+        <div class="span6">
+          <%= image_tag 'eric.jpg' %>
+        </div>
       </div>
     </div>
   </div>

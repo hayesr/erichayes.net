@@ -39,13 +39,28 @@ namespace :deploy do
   end
 end
 
+# namespace :deploy do
+#   namespace :assets do
+#     task :precompile, :roles => :app, :except => { :no_release => true } do
+#       run <<-CMD.compact
+#         cd -- #{latest_release.shellescape} &&
+#         #{rake} RAILS_ENV=#{rails_env.to_s.shellescape} #{asset_env} assets:precompile
+#       CMD
+#     end
+#   end
+# end
+
 namespace :deploy do
-  namespace :assets do
-    task :precompile, :roles => :app, :except => { :no_release => true } do
-      run <<-CMD.compact
-        cd -- #{latest_release.shellescape} &&
-        #{rake} RAILS_ENV=#{rails_env.to_s.shellescape} #{asset_env} assets:precompile
-      CMD
-    end
+  desc 'Do precompile'
+  task :manual_precompile do
+    run "cd #{release_path} && RAILS_ENV=production bundle exec rake assets:precompile"
+  end
+  
+  desc 'Gen DB file'
+  task :create_db do
+    run "cd #{release_path} && RAILS_ENV=production bundle exec rake db:create"
   end
 end
+
+after "deploy:update_code", "deploy:manual_precompile"
+after "deploy:update_code", "deploy:create_db"

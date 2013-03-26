@@ -10,10 +10,12 @@ nav{
       a{
         font-family: "museo-sans-1","museo-sans-2";
         display: block;
+        font-weight: bold;
         padding: 0 1em 3px 0;
         border-bottom: none;
+        color: $type;
         &:hover{
-          color: $type;
+          color: $link;
           border-bottom: none;
         }
       }

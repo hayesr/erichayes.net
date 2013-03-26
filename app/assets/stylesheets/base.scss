@@ -1,5 +1,7 @@
 $type: #444;
-$link: #1c44a0;
+$link: #2b6988;
+$page: #f2f1f0;
+$body: #b8baba;
 
 @import 'mixins';
 @import 'normalize';
@@ -11,7 +13,7 @@ $link: #1c44a0;
 body{ 
   padding:0;
   margin: 0;
-  background: #242b2f;
+  background: $body;
 }
 
 a{
@@ -25,16 +27,20 @@ a{
 }
 
 #page{
-  background-color: #fff;
+  background-color: $page;
   padding: 6em 0;
+  margin: 1em auto 6em auto;
+  max-width: 1002px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
 #page > header{
   position: absolute;
-  top: 0;
-  padding: 2em 0 1em 0;
+  top: 1em;
+  padding: 3em 0 1em 0;
   z-index: 99;
   width: 100%;
+  max-width: 1002px;
   -webkit-transform: translate3d(0,0,0);
   -moz-transform: translate3d(0,0,0);
   -webkit-transition-property: all;
@@ -47,33 +53,53 @@ a{
     font-size: 16px;
     padding: 0;
     margin: 0;
+    a{
+      color: $type;
+      border-bottom: none;
+      &:hover{
+        color: $link;
+      }
+    }
   }
   &.stick{
     position: fixed;
     top: 0;
-    background-color: fade-out(#fff, 0.05);
-    @include box-shadow(0 1px 3px rgba(0,0,0,0.4));
+    background-color: $page;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+//    @include box-shadow(0 1px 3px rgba(0,0,0,0.4));
   }
 }
 
 .banner{
   background-color: #040520;
-  background: image-url("blur-back.jpg") no-repeat 50% 12%;
+  background: image-url("blur-back3.jpg") no-repeat 50% 12%;
   background-size: cover;
   color: #fff;
   margin-bottom: 2em;
-  min-height: 26em;
+  min-height: 32em;
   padding-top: 10em;
   h1,h2{
     font-weight: 300;
     margin: 0;
     text-align: center;
   }
-  h1{ font-size: 89px; }
+  h1{ 
+    font-size: 89px;
+    border-bottom: 1px solid fade-out(#fff, 0.5);
+    margin-bottom: 0.35em;
+    padding-bottom: 0.2em;
+  }
   h2{
     font-size: 26px;
 //    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2",georgia,serif;
     font-style: italic;
+  }
+}
+
+.features{
+  img{
+    border: 3px solid #fff;
+    @include box-shadow(0 1px 1px rgba(0,0,0,0.2));
   }
 }
 
@@ -86,11 +112,8 @@ a{
   a{
     color: $type;
     &:hover{
-      color: #222;
+      color: darken($type, 20%);
     }
-  }
-  img{
-    border: 3px solid #fff;
   }
   h4{
     margin: 0;
@@ -98,16 +121,22 @@ a{
       display: none;
       text-align: right;
       padding-left: 1em;
-      color: #868686;
+      color: $type;
       font-weight: 300;
     }
   }
   &:hover{
-    background: #efefef;
+    background: darken($page, 5%);
     small{
       display: inline-block;
     }
   }
+}
+
+.portrait.feature{
+  text-align: center;
+  padding: 1em 32px;
+  border-bottom: none;
 }
 
 .span7.centered{
