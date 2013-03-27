@@ -24,7 +24,9 @@
           <nav>
             <ul>
               <li><%= link_to 'Email', 'mailto:eric@erichayes.net'%></li>
-              <!-- <li><%= link_to 'SVN', '/svn' %></li> -->
+              <% if session[:svn] %>
+                <li><%= link_to 'SVN', '/svn' %></li>
+              <% end %>
               <li><%= link_to 'Resume', '/resume' %></li>
             </ul>
           </nav>
