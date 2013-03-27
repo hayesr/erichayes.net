@@ -163,6 +163,9 @@ a{
     &:hover{
       color: darken($type, 20%);
     }
+    a{
+      color: $link; // Link-ception
+    }
   }
   h4{
     margin: 0;
