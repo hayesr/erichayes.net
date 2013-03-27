@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require global
 //= require scrolling
+//= require pages
